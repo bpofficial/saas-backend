@@ -7,15 +7,16 @@ import { RpcException } from '@nestjs/microservices';
 
 @CommandHandler(DeletePlanCommand)
 export class DeletePlanHandler implements ICommandHandler<DeletePlanCommand> {
-  logger = new Logger(this.constructor.name);
+    logger = new Logger(this.constructor.name);
 
-  public constructor(
-    @InjectStripe() private readonly stripeClient: Stripe,
-    private readonly eventBus: EventBus,
-  ) {}
+    public constructor(
+        @InjectStripe() private readonly stripeClient: Stripe,
+        private readonly eventBus: EventBus,
+    ) {
+    }
 
-  async execute(command: DeletePlanCommand): Promise<any> {
-    // TODO: Tobe implemented
-    throw new RpcException('Not implemented');
-  }
+    async execute(command: DeletePlanCommand): Promise<any> {
+        // TODO: Tobe implemented
+        throw new RpcException('Not implemented');
+    }
 }

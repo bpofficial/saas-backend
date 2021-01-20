@@ -1,50 +1,50 @@
 import { ArgsType, Field, ID, InputType } from '@nestjs/graphql';
-import { AppRole, InvitationStatus } from '@ultimatebackend/contracts';
+import { AppRole, InvitationStatus } from '@server/contracts';
 
 @InputType()
 export class InviteMemberInput {
-  @Field({ nullable: true })
-  email?: string;
+    @Field({ nullable: true })
+    email?: string;
 
-  @Field(() => ID, { nullable: true })
-  userId?: string;
+    @Field(() => ID, { nullable: true })
+    userId?: string;
 
-  @Field(() => AppRole)
-  role: AppRole;
+    @Field(() => AppRole)
+    role: AppRole;
 }
 
 @InputType()
 export class UpdateMemberInput {
-  @Field(() => ID, { nullable: true })
-  id: string;
+    @Field(() => ID, { nullable: true })
+    id: string;
 
-  @Field(() => AppRole)
-  role: AppRole;
+    @Field(() => AppRole)
+    role: AppRole;
 }
 
 @InputType()
 export class DeleteMemberInput {
-  @Field(() => ID)
-  id: string;
+    @Field(() => ID)
+    id: string;
 
-  @Field()
-  tenantId: string;
+    @Field()
+    tenantId: string;
 }
 
 @InputType()
 export class MemberFilterInput {
-  @Field(() => InvitationStatus, { nullable: true })
-  status: InvitationStatus;
+    @Field(() => InvitationStatus, { nullable: true })
+    status: InvitationStatus;
 
-  @Field(() => AppRole, { nullable: true })
-  role: AppRole;
+    @Field(() => AppRole, { nullable: true })
+    role: AppRole;
 
-  @Field({ nullable: true })
-  tenantId: string;
+    @Field({ nullable: true })
+    tenantId: string;
 }
 
 @ArgsType()
 export class MemberFilterArgs {
-  @Field(() => MemberFilterInput, { nullable: true })
-  where?: MemberFilterInput;
+    @Field(() => MemberFilterInput, { nullable: true })
+    where?: MemberFilterInput;
 }

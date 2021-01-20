@@ -1,7 +1,7 @@
 /* tslint:disable:max-classes-per-file */
 import { Entity } from '@juicycleff/repo-orm';
 import { ObjectID } from 'mongodb';
-import { AppRole, InvitationStatus } from '@ultimatebackend/contracts';
+import { AppRole, InvitationStatus } from '@server/contracts';
 
 @Entity({ name: 'tenant-member' })
 export class TenantMemberEmbed {

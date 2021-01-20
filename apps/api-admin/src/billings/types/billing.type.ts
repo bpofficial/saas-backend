@@ -1,7 +1,9 @@
 import { ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
-export class Billing {}
+export class Billing {
+}
 
 @ObjectType()
-export class BillingMutations {}
+export class BillingMutations {
+}

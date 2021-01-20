@@ -5,11 +5,11 @@ import {
   StringComparisonFilter,
   DateComparisonFilter,
   EnumComparisonFilter,
-} from '@ultimatebackend/contracts/types';
-import { getMetadataStorage } from '@ultimatebackend/core/metadata';
-import { InstanceCollector } from '@ultimatebackend/core/decorators/instance-collector.decorator';
-import { PaginationInput } from '@ultimatebackend/contracts';
-import { ClassType } from '@ultimatebackend/common';
+} from '@server/contracts/types';
+import { getMetadataStorage } from '@server/core/metadata';
+import { InstanceCollector } from '@server/core/decorators/instance-collector.decorator';
+import { PaginationInput } from '@server/contracts';
+import { ClassType } from '@server/common';
 
 interface FilterMongoOption {
   simple?: boolean;

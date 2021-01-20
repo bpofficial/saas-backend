@@ -1,12 +1,12 @@
-import { Directive, Field, ObjectType, ID } from '@nestjs/graphql';
-import { Node } from '@ultimatebackend/contracts';
+import { Directive, Field, ObjectType } from '@nestjs/graphql';
+import { Node } from '@server/contracts';
 
 @Directive(`@key(fields: "id")`)
 @ObjectType()
 export class Role extends Node {
-  @Field()
-  name: string;
+    @Field()
+    name: string;
 
-  @Field()
-  normalizedName!: string;
+    @Field()
+    normalizedName!: string;
 }

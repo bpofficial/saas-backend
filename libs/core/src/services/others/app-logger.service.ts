@@ -1,5 +1,5 @@
 import { LoggerService } from '@nestjs/common';
-import { NotImplementedError } from '@ultimatebackend/common/errors';
+import { NotImplementedError } from '@server/common/errors';
 
 export class AppLogger implements LoggerService {
   log(message: string) {

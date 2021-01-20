@@ -3,6 +3,7 @@ import { AccessTokenResolver } from './access-token.resolver';
 import { AccessTokenMutationResolver } from './access-token-mutation.resolver';
 
 @Module({
-  providers: [AccessTokenResolver, AccessTokenMutationResolver],
+    providers: [AccessTokenResolver, AccessTokenMutationResolver],
 })
-export class AccessTokenModule {}
+export class AccessTokenModule {
+}

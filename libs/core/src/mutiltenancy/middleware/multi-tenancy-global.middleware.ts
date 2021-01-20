@@ -1,6 +1,6 @@
 import * as vhost from 'vhost';
 import { MultiTenancyConfig } from '../interface';
-import { IRequest } from '@ultimatebackend/common';
+import { IRequest } from '@server/common';
 import { BuildTenantInfoHelper } from '../';
 
 export function enableMultiTenancy(option: MultiTenancyConfig) {

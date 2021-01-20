@@ -8,7 +8,7 @@ import { GqlExecutionContext } from '@nestjs/graphql';
 import { Reflector } from '@nestjs/core';
 import { GqlContext, IResource } from '../interfaces';
 import { RESOURCE_DEFINITION } from '../decorators';
-import { UnauthorizedError } from '@ultimatebackend/common';
+import { UnauthorizedError } from '@server/common';
 import { Metadata } from 'grpc';
 
 /**

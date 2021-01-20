@@ -1,33 +1,31 @@
 import { Module } from '@nestjs/common';
 import { WebhookController } from './webhook.controller';
-import {
-  EventStoreModule,
-  EventStoreSubscriptionType,
-} from '@juicycleff/nestjs-event-store';
-import { WebhookEventHandlers } from '@ultimatebackend/core';
+import { EventStoreModule, EventStoreSubscriptionType } from '@juicycleff/nestjs-event-store';
+import { WebhookEventHandlers } from '@server/core';
 import { WebhookCommandHandlers, WebhookQueryHandlers } from '../cqrs';
-import { WebhookRepository } from '@ultimatebackend/repository';
+import { WebhookRepository } from '@server/repository';
 
 @Module({
-  imports: [
-    EventStoreModule.registerFeature({
-      type: 'event-store',
-      featureStreamName: '$ce-webhook',
-      subscriptions: [
-        {
-          type: EventStoreSubscriptionType.Volatile,
-          stream: '$ce-webhook',
-        },
-      ],
-      eventHandlers: null,
-    }),
-  ],
-  providers: [
-    ...WebhookEventHandlers,
-    ...WebhookQueryHandlers,
-    ...WebhookCommandHandlers,
-    WebhookRepository,
-  ],
-  controllers: [WebhookController],
+    imports: [
+        EventStoreModule.registerFeature({
+            type: 'event-store',
+            featureStreamName: '$ce-webhook',
+            subscriptions: [
+                {
+                    type: EventStoreSubscriptionType.Volatile,
+                    stream: '$ce-webhook',
+                },
+            ],
+            eventHandlers: null,
+        }),
+    ],
+    providers: [
+        ...WebhookEventHandlers,
+        ...WebhookQueryHandlers,
+        ...WebhookCommandHandlers,
+        WebhookRepository,
+    ],
+    controllers: [WebhookController],
 })
-export class WebhookModule {}
+export class WebhookModule {
+}

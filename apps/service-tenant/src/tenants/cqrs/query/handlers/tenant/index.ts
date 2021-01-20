@@ -3,7 +3,7 @@ import { GetTenantsHandler } from './get-tenants.handler';
 import { TenantAvailableHandler } from './tenant-available.handler';
 
 export const TenantQueryHandlers = [
-  GetTenantHandler,
-  GetTenantsHandler,
-  TenantAvailableHandler,
+    GetTenantHandler,
+    GetTenantsHandler,
+    TenantAvailableHandler,
 ];

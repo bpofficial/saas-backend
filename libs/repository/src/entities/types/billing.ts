@@ -1,4 +1,4 @@
-import { Address } from '@ultimatebackend/contracts';
+import { Address } from '@server/contracts';
 import { AggregateRoot } from '@nestjs/cqrs';
 import { Type } from 'class-transformer';
 

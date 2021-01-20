@@ -1,0 +1,9 @@
+{
+    "datacenter": "dev1",
+    "log_level": "INFO",
+    "node_name": "development",
+    "server": true,
+    "limits": {
+        "http_max_conns_per_client": 1500
+    }
+}

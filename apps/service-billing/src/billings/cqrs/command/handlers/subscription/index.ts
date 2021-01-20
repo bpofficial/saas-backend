@@ -3,7 +3,7 @@ import { CancelSubscriptionHandler } from './cancel-subscription.handler';
 import { ChangeSubscriptionHandler } from './change-subscription.handler';
 
 export const SubscriptionCommandHandlers = [
-  CreateSubscriptionHandler,
-  ChangeSubscriptionHandler,
-  CancelSubscriptionHandler,
+    CreateSubscriptionHandler,
+    ChangeSubscriptionHandler,
+    CancelSubscriptionHandler,
 ];

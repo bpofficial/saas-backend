@@ -13,55 +13,55 @@ import { TerminusModule } from '@nestjs/terminus';
 
 @Global()
 @Module({
-  imports: [
-    LoggerModule.register(),
-    ScheduleModule.register(),
-    BootModule.register(
-      __dirname,
-      `bootstrap-${process.env.NODE_ENV || 'development'}.yaml`,
-    ),
-    ConsulModule.register({ dependencies: [NEST_BOOT] }),
-    ConfigModule.register({ dependencies: [NEST_BOOT, NEST_CONSUL] }),
-    ServiceModule.register({ dependencies: [NEST_BOOT, NEST_CONSUL] }),
-    LoadbalanceModule.register({ dependencies: [NEST_BOOT] }),
-    CacheModule.registerAsync({
-      useClass: CacheStoreConfigService,
-    }),
-    EventStoreModule.registerAsync({
-      type: 'event-store',
-      useClass: EventstoreConfigService,
-    }),
-    TerminusModule.forRootAsync({
-      useFactory: () => ({
-        disableDeprecationWarnings: true,
-        endpoints: [{ url: '/health', healthIndicators: [] }],
-      }),
-    }),
-  ],
-  exports: [
-    LoggerModule.register(),
-    ScheduleModule.register(),
-    BootModule.register(
-      __dirname,
-      `bootstrap-${process.env.NODE_ENV || 'development'}.yaml`,
-    ),
-    ConsulModule.register({ dependencies: [NEST_BOOT] }),
-    ConfigModule.register({ dependencies: [NEST_BOOT, NEST_CONSUL] }),
-    ServiceModule.register({ dependencies: [NEST_BOOT, NEST_CONSUL] }),
-    LoadbalanceModule.register({ dependencies: [NEST_BOOT] }),
-    CacheModule.registerAsync({
-      useClass: CacheStoreConfigService,
-    }),
-    EventStoreModule.registerAsync({
-      type: 'event-store',
-      useClass: EventstoreConfigService,
-    }),
-    TerminusModule.forRootAsync({
-      useFactory: () => ({
-        disableDeprecationWarnings: true,
-        endpoints: [{ url: '/health', healthIndicators: [] }],
-      }),
-    }),
-  ],
+    imports: [
+        LoggerModule.register(),
+        ScheduleModule.register(),
+        BootModule.register(
+            __dirname,
+            `bootstrap-${process.env.NODE_ENV || 'development'}.yaml`,
+        ),
+        ConsulModule.register({ dependencies: [NEST_BOOT] }),
+        ConfigModule.register({ dependencies: [NEST_BOOT, NEST_CONSUL] }),
+        ServiceModule.register({ dependencies: [NEST_BOOT, NEST_CONSUL] }),
+        LoadbalanceModule.register({ dependencies: [NEST_BOOT] }),
+        CacheModule.registerAsync({
+            useClass: CacheStoreConfigService,
+        }),
+        EventStoreModule.registerAsync({
+            type: 'event-store',
+            useClass: EventstoreConfigService,
+        }),
+        TerminusModule.forRootAsync({
+            useFactory: () => ({
+                disableDeprecationWarnings: true,
+                endpoints: [{ url: '/health', healthIndicators: [] }],
+            }),
+        }),
+    ],
+    exports: [
+        LoggerModule.register(),
+        ScheduleModule.register(),
+        BootModule.register(
+            __dirname,
+            `bootstrap-${process.env.NODE_ENV || 'development'}.yaml`,
+        ),
+        ConsulModule.register({ dependencies: [NEST_BOOT] }),
+        ConfigModule.register({ dependencies: [NEST_BOOT, NEST_CONSUL] }),
+        ServiceModule.register({ dependencies: [NEST_BOOT, NEST_CONSUL] }),
+        LoadbalanceModule.register({ dependencies: [NEST_BOOT] }),
+        CacheModule.registerAsync({
+            useClass: CacheStoreConfigService,
+        }),
+        EventStoreModule.registerAsync({
+            type: 'event-store',
+            useClass: EventstoreConfigService,
+        }),
+        TerminusModule.forRootAsync({
+            useFactory: () => ({
+                disableDeprecationWarnings: true,
+                endpoints: [{ url: '/health', healthIndicators: [] }],
+            }),
+        }),
+    ],
 })
 export class ServiceRegistryModule {}

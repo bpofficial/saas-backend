@@ -3,7 +3,8 @@ import { TenantMembersResolver } from './tenant-members.resolver';
 import { TenantMembersMutationResolver } from './tenant-members-mutation.resolver';
 
 @Module({
-  imports: [HttpModule],
-  providers: [TenantMembersResolver, TenantMembersMutationResolver],
+    imports: [HttpModule],
+    providers: [TenantMembersResolver, TenantMembersMutationResolver],
 })
-export class TenantMembersModule {}
+export class TenantMembersModule {
+}

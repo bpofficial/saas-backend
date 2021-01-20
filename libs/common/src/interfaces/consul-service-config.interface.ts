@@ -1,40 +1,42 @@
+import { MongoClientOptions } from 'mongodb';
+
 export interface ConsulServiceConfig {
-  app: ConsulAppConfig;
-  database: ConsulDatabaseConfig;
+    app: ConsulAppConfig;
+    database: ConsulDatabaseConfig;
 }
 
 export interface ConsulAppConfig {
-  port: number;
-  grpcPort: number;
+    port: number;
+    grpcPort: number;
 }
 
 export interface ConsulDatabaseConfig {
-  mongodb: ConsulMongodbConfig;
-  eventstore: ConsulEventstoreConfig;
-  redis: ConsulRedisConfig;
+    mongodb: ConsulMongodbConfig;
+    eventstore: ConsulEventstoreConfig;
+    redis: ConsulRedisConfig;
 }
 
 export interface ConsulMongodbConfig {
-  uri: string;
-  name: string;
-  options: string;
+    uri: string;
+    name: string;
+    options: Partial<MongoClientOptions>;
 }
 
 export interface ConsulEventstoreConfig {
-  poolMax: any;
-  poolMin: any;
-  streamProtocol: string;
-  hostname: string;
-  httpPort: number;
-  httpPotocol: string;
-  tcpPassword: string;
-  tcpUsername: string;
-  tcpPort: number;
-  tcpProtocol: string;
+    poolMax: any;
+    poolMin: any;
+    streamProtocol: string;
+    hostname: string;
+    httpPort: number;
+    httpPotocol: string;
+    tcpPassword: string;
+    tcpUsername: string;
+    tcpPort: number;
+    tcpProtocol: string;
 }
 
 export interface ConsulRedisConfig {
-  host: string;
-  port: string;
-  password: string;
+    host: string;
+    port: string;
+    password: string;
 }

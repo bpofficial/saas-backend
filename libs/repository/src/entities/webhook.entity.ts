@@ -3,7 +3,7 @@ import { BaseEntity } from './base-entity';
 import {
   WebhookCrudEnum,
   WebhookHttpVerbEnum,
-} from '@ultimatebackend/contracts';
+} from '@server/contracts';
 
 export type AuthTypeEntity =
   | {

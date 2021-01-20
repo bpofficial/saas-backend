@@ -1,24 +1,22 @@
 import { Module } from '@nestjs/common';
 import { MongoModule } from '@juicycleff/repo-orm';
-import {
-  CoreModule,
-  MongoConfigService,
-  ServiceRegistryModule,
-} from '@ultimatebackend/core';
+import { CoreModule, ServiceRegistryModule } from '@server/core';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AccountsModule } from './accounts/accounts.module';
+import { MongoMultiTenantConfigService } from '@server/core/mutiltenancy';
 
 @Module({
-  imports: [
-    ServiceRegistryModule,
-    CoreModule,
-    MongoModule.registerAsync({
-      useClass: MongoConfigService,
-    }),
-    AccountsModule,
-  ],
-  controllers: [AppController],
-  providers: [AppService],
+    imports: [
+        ServiceRegistryModule,
+        CoreModule,
+        MongoModule.registerAsync({
+            useClass: MongoMultiTenantConfigService,
+        }),
+        AccountsModule,
+    ],
+    controllers: [AppController],
+    providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+}

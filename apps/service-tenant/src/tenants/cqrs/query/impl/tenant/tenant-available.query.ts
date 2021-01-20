@@ -1,6 +1,7 @@
 import { IQuery } from '@nestjs/cqrs';
-import { TenantAvailableRequest } from '@ultimatebackend/proto-schema/tenant';
+import { TenantAvailableRequest } from '@server/proto-schema/tenant';
 
 export class TenantAvailableQuery implements IQuery {
-  constructor(public readonly where: TenantAvailableRequest) {}
+    constructor(public readonly where: TenantAvailableRequest) {
+    }
 }

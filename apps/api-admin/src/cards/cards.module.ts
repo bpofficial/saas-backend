@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
-import { CardsResolver, CardsMutationResolver } from './cards.resolver';
+import { CardsMutationResolver, CardsResolver } from './cards.resolver';
 
 @Module({
-  providers: [CardsResolver, CardsMutationResolver],
+    providers: [CardsResolver, CardsMutationResolver],
 })
-export class CardsModule {}
+export class CardsModule {
+}

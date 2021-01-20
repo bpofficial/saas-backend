@@ -1,5 +1,5 @@
 import { IEvent } from '@nestjs/cqrs';
-import { UserEntity } from '@ultimatebackend/repository/entities';
+import { UserEntity } from '@server/repository/entities';
 
 export class UserRegisteredEvent implements IEvent {
   constructor(

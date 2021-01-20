@@ -6,10 +6,10 @@ import { UpdateUserHandler } from './update-user.handler';
 import { ForgotPasswordHandler } from './forgot-password.handler';
 
 export const AccountCommandHandlers = [
-  LoginUserHandler,
-  RegisterUserHandler,
-  VerifyEmailHandler,
-  ResendVerificationEmailHandler,
-  UpdateUserHandler,
-  ForgotPasswordHandler,
+    LoginUserHandler,
+    RegisterUserHandler,
+    VerifyEmailHandler,
+    ResendVerificationEmailHandler,
+    UpdateUserHandler,
+    ForgotPasswordHandler,
 ];

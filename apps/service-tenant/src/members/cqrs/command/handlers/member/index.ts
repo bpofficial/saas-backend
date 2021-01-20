@@ -4,8 +4,8 @@ import { InviteMemberHandler } from './invite-member.handler';
 import { UpdateMemberHandler } from './update-member.handler';
 
 export const MemberCommandHandlers = [
-  RemoveMemberHandler,
-  AcceptInvitationHandler,
-  InviteMemberHandler,
-  UpdateMemberHandler,
+    RemoveMemberHandler,
+    AcceptInvitationHandler,
+    InviteMemberHandler,
+    UpdateMemberHandler,
 ];

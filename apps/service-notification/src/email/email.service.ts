@@ -4,20 +4,21 @@ import { MailData } from '@sendgrid/helpers/classes/mail';
 
 @Injectable()
 export class EmailService {
-  constructor(private readonly sendGrid: SendGridService) {}
-
-  public async sendEmail(
-    data: Partial<MailData> | Array<Partial<MailData>>,
-    isMultiple?: boolean,
-  ) {
-    if (!data) {
-      return null;
+    constructor(private readonly sendGrid: SendGridService) {
     }
 
-    try {
-      await this.sendGrid.send({ ...data }, isMultiple);
-    } catch (e) {
-      Logger.error(e.message, e);
+    public async sendEmail(
+        data: Partial<MailData> | Array<Partial<MailData>>,
+        isMultiple?: boolean,
+    ) {
+        if (!data) {
+            return null;
+        }
+
+        try {
+            await this.sendGrid.send({ ...data }, isMultiple);
+        } catch (e) {
+            Logger.error(e.message, e);
+        }
     }
-  }
 }

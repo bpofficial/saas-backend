@@ -1,7 +1,7 @@
 import { findType } from '../metadata/find-type';
 import { getMetadataStorage } from '../metadata';
 import { ReturnTypeFunc } from '@nestjs/graphql';
-import { ClassType } from '@ultimatebackend/common';
+import { ClassType } from '@server/common';
 
 // tslint:disable-next-line:ban-types
 export function Filterable(
@@ -17,7 +17,7 @@ export function Filterable(
       returnTypeFunc,
       // @ts-ignore
       typeOptions: option,
-    });
+    } as any);
 
     getMetadataStorage().collectClassFieldMetadata({
       name: propertyKey,

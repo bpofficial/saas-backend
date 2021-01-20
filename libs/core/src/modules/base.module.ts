@@ -2,8 +2,8 @@
 import { Logger, OnModuleInit } from '@nestjs/common';
 import { IPermission, IResource } from '../interfaces';
 import { join } from 'path';
-import { getMetadataStorage } from '@ultimatebackend/core/metadata';
-import { RolesRpcClientService } from '@ultimatebackend/core/services';
+import { getMetadataStorage } from '@server/core/metadata';
+import { RolesRpcClientService } from '@server/core/services';
 
 export class BaseModule implements OnModuleInit {
   constructor(private readonly clientService: RolesRpcClientService) {}

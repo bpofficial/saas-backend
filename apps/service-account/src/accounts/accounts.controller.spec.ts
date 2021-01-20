@@ -4,18 +4,18 @@ import { CqrsModule } from '@nestjs/cqrs';
 import { CacheModule } from '@nestjs/common';
 
 describe('Accounts Controller', () => {
-  let controller: AccountsController;
+    let controller: AccountsController;
 
-  beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      imports: [CqrsModule, CacheModule.register()],
-      controllers: [AccountsController],
-    }).compile();
+    beforeEach(async () => {
+        const module: TestingModule = await Test.createTestingModule({
+            imports: [CqrsModule, CacheModule.register()],
+            controllers: [AccountsController],
+        }).compile();
 
-    controller = module.get<AccountsController>(AccountsController);
-  });
+        controller = module.get<AccountsController>(AccountsController);
+    });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
+    it('should be defined', () => {
+        expect(controller).toBeDefined();
+    });
 });

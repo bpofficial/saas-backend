@@ -2,7 +2,7 @@ syntax = "proto3";
 
 // import "google/protobuf/timestamp.proto";
 
-package io.ultimatebackend.srv.role;
+package server.svc.role;
 
 service RoleService {
     rpc CreateRole(CreateRoleRequest) returns (CreateRoleResponse) {}

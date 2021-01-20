@@ -1,5 +1,5 @@
 import { Field, ObjectType, Int } from '@nestjs/graphql';
-import { Filterable } from '@ultimatebackend/core/decorators/filterable';
+import { Filterable } from '@server/core/decorators/filterable';
 
 @ObjectType()
 export class BooleanPayload {

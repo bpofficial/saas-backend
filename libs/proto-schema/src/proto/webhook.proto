@@ -2,7 +2,7 @@ syntax = "proto3";
 
 // import "google/protobuf/timestamp.proto";
 
-package io.ultimatebackend.srv.webhook;
+package server.svc.webhook;
 
 service WebhookService {
   rpc CreateWebhook(CreateWebhookRequest) returns (CreateWebhookResponse) {}

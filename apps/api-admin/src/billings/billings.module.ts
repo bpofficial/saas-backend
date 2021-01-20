@@ -3,6 +3,7 @@ import { BillingsResolver } from './billings.resolver';
 import { BillingsMutationResolver } from './billings-mutation.resolver';
 
 @Module({
-  providers: [BillingsResolver, BillingsMutationResolver],
+    providers: [BillingsResolver, BillingsMutationResolver],
 })
-export class BillingsModule {}
+export class BillingsModule {
+}

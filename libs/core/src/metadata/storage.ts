@@ -3,7 +3,7 @@ import {
   ClassType,
   DecoratorTypeOptions,
   ensureReflectMetadataExists,
-} from '@ultimatebackend/common';
+} from '@server/common';
 
 export class MetadataStorage {
   fields: FilterableMetadata[] = [];

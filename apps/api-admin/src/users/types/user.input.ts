@@ -1,45 +1,44 @@
-import { Field, InputType, ID, ArgsType } from '@nestjs/graphql';
+import { ArgsType, Field, ID, InputType } from '@nestjs/graphql';
 import { User } from './user.type';
-import {
-  FilterMongo,
-  PaginationInput,
-} from '@ultimatebackend/contracts/inputs';
+import { FilterMongo, PaginationInput } from '@server/contracts/inputs';
 
 @InputType()
 export class DeleteUserInput {
-  @Field(() => ID)
-  id: string;
+    @Field(() => ID)
+    id: string;
 }
 
 @InputType()
-export class UpdateUserDataInput {}
+export class UpdateUserDataInput {
+}
 
 @InputType()
 export class UpdateUserInput {
-  @Field({ nullable: true })
-  firstname?: string;
+    @Field({ nullable: true })
+    firstname?: string;
 
-  @Field({ nullable: true })
-  lastname?: string;
+    @Field({ nullable: true })
+    lastname?: string;
 }
 
 @ArgsType()
 export class UserMutations {
-  @Field(() => UpdateUserInput, { nullable: true })
-  updateProfile?: UpdateUserInput;
+    @Field(() => UpdateUserInput, { nullable: true })
+    updateProfile?: UpdateUserInput;
 
-  @Field(() => DeleteUserInput, { nullable: true })
-  deleteAccount?: DeleteUserInput;
+    @Field(() => DeleteUserInput, { nullable: true })
+    deleteAccount?: DeleteUserInput;
 }
 
 @InputType()
-export class UserFilterInput extends FilterMongo(User, { simple: true }) {}
+export class UserFilterInput extends FilterMongo(User, { simple: true }) {
+}
 
 @ArgsType()
 export class ProjectFilterArgs {
-  @Field(() => UserFilterInput, { nullable: true })
-  where?: UserFilterInput;
+    @Field(() => UserFilterInput, { nullable: true })
+    where?: UserFilterInput;
 
-  @Field(() => PaginationInput, { nullable: true })
-  paginate?: PaginationInput;
+    @Field(() => PaginationInput, { nullable: true })
+    paginate?: PaginationInput;
 }

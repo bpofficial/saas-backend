@@ -6,29 +6,30 @@ import { SendGridModuleOptionsFactory } from '@anchan828/nest-sendgrid/dist/send
 
 @Injectable()
 export class SendgridConfigService implements SendGridModuleOptionsFactory {
-  constructor(@InjectConfig() private readonly config: EtcdConfig) {}
+    constructor(@InjectConfig() private readonly config: EtcdConfig) {
+    }
 
-  createSendGridModuleOptions():
-    | Promise<SendGridModuleOptions>
-    | SendGridModuleOptions {
-    const sendgrid = this.config.get<{ apiKey: string; sender: string }>(
-      'sendgrid',
-    );
-    return {
-      apikey: sendgrid.apiKey,
-      defaultMailData: {
-        from: sendgrid.sender,
-        content: null,
-        trackingSettings: {
-          clickTracking: {
-            enable: true,
-            enableText: true,
-          },
-          openTracking: {
-            enable: true,
-          },
-        },
-      },
-    };
-  }
+    createSendGridModuleOptions():
+        | Promise<SendGridModuleOptions>
+        | SendGridModuleOptions {
+        const sendgrid = this.config.get<{ apiKey: string; sender: string }>(
+            'sendgrid',
+        );
+        return {
+            apikey: sendgrid.apiKey,
+            defaultMailData: {
+                from: sendgrid.sender,
+                content: null,
+                trackingSettings: {
+                    clickTracking: {
+                        enable: true,
+                        enableText: true,
+                    },
+                    openTracking: {
+                        enable: true,
+                    },
+                },
+            },
+        };
+    }
 }

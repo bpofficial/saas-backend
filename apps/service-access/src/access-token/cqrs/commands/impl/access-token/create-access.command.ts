@@ -1,10 +1,11 @@
 import { ICommand } from '@nestjs/cqrs';
-import { CreateAccessRequest } from '@ultimatebackend/proto-schema/access';
-import { UserEntity } from '@ultimatebackend/repository';
+import { CreateAccessRequest } from '@server/proto-schema/access';
+import { UserEntity } from '@server/repository';
 
 export class CreateAccessCommand implements ICommand {
-  constructor(
-    public readonly cmd: CreateAccessRequest,
-    public readonly user: UserEntity,
-  ) {}
+    constructor(
+        public readonly cmd: CreateAccessRequest,
+        public readonly user: UserEntity,
+    ) {
+    }
 }

@@ -5,7 +5,7 @@ import {
   EventStoreOptionsFactory,
   EventStoreModuleOptions,
 } from '@juicycleff/nestjs-event-store';
-import { ConsulDatabaseConfig } from '@ultimatebackend/common';
+import { ConsulDatabaseConfig } from '@server/common';
 
 @Injectable()
 export class EventstoreConfigService implements EventStoreOptionsFactory {

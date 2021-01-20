@@ -15,7 +15,7 @@ import {
   UpdateByIdRequest,
   UpdateRequest,
 } from '../../../interfaces';
-import { cleanEmptyProperties } from '@ultimatebackend/common';
+import { cleanEmptyProperties } from '@server/common';
 import { InsertOptions, UpdateOptions } from 'arangojs/lib/cjs/util/types';
 import { aql, AqlQuery } from 'arangojs/lib/cjs/aql-query';
 import { ArrayCursor } from 'arangojs/lib/cjs/cursor';

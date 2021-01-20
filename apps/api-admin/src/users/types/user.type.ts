@@ -1,36 +1,37 @@
 import { Directive, Field, ObjectType } from '@nestjs/graphql';
-import { Node } from '@ultimatebackend/contracts';
+import { Node } from '@server/contracts';
 
 @ObjectType()
 export class EmailObject {
-  @Field()
-  address: string;
+    @Field()
+    address: string;
 
-  @Field()
-  primary: boolean;
+    @Field()
+    primary: boolean;
 
-  @Field()
-  verified: boolean;
+    @Field()
+    verified: boolean;
 }
 
 @ObjectType()
-export class ProfileMutations {}
+export class ProfileMutations {
+}
 
 @Directive(`@key(fields: "id")`)
 @ObjectType()
 export class User extends Node {
-  @Field()
-  firstname: string;
+    @Field()
+    firstname: string;
 
-  @Field()
-  lastname: string;
+    @Field()
+    lastname: string;
 
-  @Field(() => [String!], { defaultValue: [] })
-  roles: string[];
+    @Field(() => [String!], { defaultValue: [] })
+    roles: string[];
 
-  @Field()
-  primaryEmail: string;
+    @Field()
+    primaryEmail: string;
 
-  @Field(() => [EmailObject!])
-  emails: EmailObject;
+    @Field(() => [EmailObject!])
+    emails: EmailObject;
 }

@@ -1,6 +1,7 @@
 import { IQuery } from '@nestjs/cqrs';
-import { FindAccessRequest } from '@ultimatebackend/proto-schema/access';
+import { FindAccessRequest } from '@server/proto-schema/access';
 
 export class FindAccessQuery implements IQuery {
-  constructor(public readonly input: FindAccessRequest) {}
+    constructor(public readonly input: FindAccessRequest) {
+    }
 }

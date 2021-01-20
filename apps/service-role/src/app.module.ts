@@ -4,20 +4,21 @@ import { AppService } from './app.service';
 import { RolesModule } from './roles/roles.module';
 import { NestCasbinModule } from 'nestjs-casbin';
 import { CasbinUserConfigService } from './casbin-config';
-import { CoreModule, ServiceRegistryModule } from '@ultimatebackend/core';
+import { CoreModule, ServiceRegistryModule } from '@server/core';
 import { AdapterProviderModule } from './adapter.provider';
 
 @Module({
-  imports: [
-    ServiceRegistryModule,
-    CoreModule,
-    NestCasbinModule.registerAsync({
-      imports: [AdapterProviderModule],
-      useClass: CasbinUserConfigService,
-    }),
-    RolesModule,
-  ],
-  controllers: [AppController],
-  providers: [AppService],
+    imports: [
+        ServiceRegistryModule,
+        CoreModule,
+        NestCasbinModule.registerAsync({
+            imports: [AdapterProviderModule],
+            useClass: CasbinUserConfigService,
+        }),
+        RolesModule,
+    ],
+    controllers: [AppController],
+    providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+}

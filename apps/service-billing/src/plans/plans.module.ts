@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { PlansService } from './plans.service';
-import { PlanRepository } from '@ultimatebackend/repository';
+import { PlanRepository } from '@server/repository';
 
 @Module({
-  providers: [PlansService, PlanRepository],
-  exports: [PlansService],
+    providers: [PlansService, PlanRepository],
+    exports: [PlansService],
 })
-export class PlansModule {}
+export class PlansModule {
+}

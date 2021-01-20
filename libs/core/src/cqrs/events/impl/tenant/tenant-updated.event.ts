@@ -1,5 +1,5 @@
 import { IEvent } from '@nestjs/cqrs';
-import { TenantEntity } from '@ultimatebackend/repository/entities';
+import { TenantEntity } from '@server/repository/entities';
 
 export class TenantUpdatedEvent implements IEvent {
   constructor(public readonly tenant: TenantEntity) {}

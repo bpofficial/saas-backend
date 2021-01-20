@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package io.ultimatebackend.srv.billing;
+package server.svc.billing;
 
 // import "google/protobuf/timestamp.proto";
 

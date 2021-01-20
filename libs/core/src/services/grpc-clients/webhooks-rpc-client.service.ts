@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { GrpcClient, RpcClient, Service } from '@nestcloud/grpc';
-import { WebhookServiceClient } from '@ultimatebackend/proto-schema/webhook';
+import { WebhookServiceClient } from '@server/proto-schema/webhook';
 import { SERVICE_LIST } from '../../constants';
 
 @Injectable()

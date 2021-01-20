@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ClientProxyFactory, Transport } from '@nestjs/microservices';
-import { ConsulDatabaseConfig } from '@ultimatebackend/common';
+import { ConsulDatabaseConfig } from '@server/common';
 import { FactoryProvider } from '@nestjs/common/interfaces/modules/provider.interface';
 import { Boot, InjectBoot } from '@nestcloud/boot';
 import { NestCloud } from '@nestcloud/core';

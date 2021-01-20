@@ -1,11 +1,7 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { CookieSerializer } from '@ultimatebackend/common';
-import {
-  CoreModule,
-  RolesRpcClientService,
-  ServiceRegistryModule,
-} from '@ultimatebackend/core';
+import { CookieSerializer } from '@server/common';
+import { CoreModule, RolesRpcClientService, ServiceRegistryModule } from '@server/core';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RolesModule } from './roles/roles.module';
@@ -24,27 +20,28 @@ import { GlobalClientModule } from './common/global-client.module';
 import { SeedModule } from './seed.module';
 
 @Module({
-  imports: [
-    SeedModule,
-    ServiceRegistryModule,
-    GraphQLModule.forRootAsync({
-      useClass: GqlConfigService,
-    }),
-    GlobalClientModule,
-    CoreModule,
-    RolesModule,
-    AccountsModule,
-    TenantsModule,
-    WebhooksModule,
-    BillingsModule,
-    CardsModule,
-    PlansModule,
-    NotificationsModule,
-    UsersModule,
-    TenantMembersModule,
-    AccessTokenModule,
-  ],
-  controllers: [AppController],
-  providers: [AppService, CookieSerializer, RolesRpcClientService],
+    imports: [
+        SeedModule,
+        ServiceRegistryModule,
+        GraphQLModule.forRootAsync({
+            useClass: GqlConfigService,
+        }),
+        GlobalClientModule,
+        CoreModule,
+        RolesModule,
+        AccountsModule,
+        TenantsModule,
+        WebhooksModule,
+        BillingsModule,
+        CardsModule,
+        PlansModule,
+        NotificationsModule,
+        UsersModule,
+        TenantMembersModule,
+        AccessTokenModule,
+    ],
+    controllers: [AppController],
+    providers: [AppService, CookieSerializer, RolesRpcClientService],
 })
-export class AppModule {}
+export class AppModule {
+}

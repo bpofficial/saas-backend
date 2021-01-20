@@ -1,44 +1,45 @@
 import { Field, ID, InputType, Int } from '@nestjs/graphql';
-import { AddressInput } from '@ultimatebackend/contracts';
+import { AddressInput } from '@server/contracts';
 
 @InputType()
 export class CardInput {
-  @Field()
-  name: string;
+    @Field()
+    name: string;
 
-  @Field()
-  cvc: string;
+    @Field()
+    cvc: string;
 
-  @Field()
-  number: string;
+    @Field()
+    number: string;
 
-  @Field({ nullable: true })
-  currency?: string;
+    @Field({ nullable: true })
+    currency?: string;
 
-  @Field(() => AddressInput)
-  address?: AddressInput;
+    @Field(() => AddressInput)
+    address?: AddressInput;
 
-  @Field(() => Int)
-  expMonth: number;
+    @Field(() => Int)
+    expMonth: number;
 
-  @Field(() => Int)
-  expYear: number;
+    @Field(() => Int)
+    expYear: number;
 }
 
 @InputType()
-export class CreateCardInput extends CardInput {}
+export class CreateCardInput extends CardInput {
+}
 
 @InputType()
 export class UpdateCardInput {
-  @Field(() => ID)
-  id: string;
+    @Field(() => ID)
+    id: string;
 
-  @Field(() => ID)
-  data: CardInput;
+    @Field(() => ID)
+    data: CardInput;
 }
 
 @InputType()
 export class DeleteCardInput {
-  @Field(() => ID)
-  id: string;
+    @Field(() => ID)
+    id: string;
 }

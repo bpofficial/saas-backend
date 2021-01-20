@@ -25,7 +25,7 @@ import {
   UpdateOneRequest,
   UpdateRequest,
 } from '../../../interfaces';
-import { cleanEmptyProperties, NotFoundError } from '@ultimatebackend/common';
+import { cleanEmptyProperties, NotFoundError } from '@server/common';
 import { DateTime } from 'luxon';
 import { merge } from 'lodash';
 

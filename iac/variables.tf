@@ -3,11 +3,11 @@ variable "region" {
 }
 
 variable "profile" {
-  default = "ultimatebackend-prod"
+  default = "server-prod"
 }
 
 variable "cluster-name" {
-  default = "ultimatebackend-cluster"
+  default = "server-cluster"
   type = "string"
 }
 

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 // import "google/protobuf/timestamp.proto";
 
-package io.ultimatebackend.srv.project;
+package server.svc.project;
 
 service ProjectService {
     rpc CreateProject(CreateProjectRequest) returns (CreateProjectResponse) {}

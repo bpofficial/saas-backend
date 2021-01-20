@@ -1,24 +1,24 @@
 consul:
-  host: ${{CONSUL_HOST}}
-  port: 8500
+    host: ${{CONSUL_HOST}}
+    port: 8500
 config:
-  key: ultimatebackend/config/${{ service.name }}
+    key: server/config/${{ service.name }}
 service:
-  discoveryHost: ${{CONSUL_HOST}}
-  healthCheck:
-    timeout: 1s
-    interval: 10s
-    tcp: ${{ service.discoveryHost }}:${{ service.port }}
-  maxRetry: 5
-  retryInterval: 5000
-  name: io.ultimatebackend.srv.tenant
-  port: 50053
+    discoveryHost: ${{CONSUL_HOST}}
+    healthCheck:
+        timeout: 1s
+        interval: 10s
+        tcp: 0.0.0.0:${{ service.port }}
+    maxRetry: 5
+    retryInterval: 5000
+    name: server.svc.tenant
+    port: 50053
 loadbalance:
-  ruleCls: RandomRule
+    ruleCls: RandomRule
 logger:
-  level: info
-  transports:
-    - transport: console
-      colorize: true
-      datePattern: YYYY-MM-DD h:mm:ss
-      label: ${{ service.name }}
+    level: info
+    transports:
+        -   transport: console
+            colorize: true
+            datePattern: YYYY-MM-DD h:mm:ss
+            label: ${{ service.name }}

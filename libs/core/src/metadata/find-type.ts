@@ -1,7 +1,7 @@
 /* tslint:disable:ban-types */
 import { TypeOptions } from 'class-transformer';
 import { TypeValueThunk } from '../metadata/storage';
-import { ReturnTypeFunc } from '@ultimatebackend/contracts/helpers';
+import { ReturnTypeFunc } from '@server/contracts/helpers';
 
 export type MetadataKey =
   | 'design:type'

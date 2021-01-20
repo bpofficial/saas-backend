@@ -1,6 +1,6 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 import { GqlExecutionContext } from '@nestjs/graphql';
-import { TenantEntity, UserEntity } from '@ultimatebackend/repository';
+import { TenantEntity, UserEntity } from '@server/repository';
 import { GqlContext } from '../';
 
 export const CurrentIdentity = createParamDecorator(

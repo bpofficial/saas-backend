@@ -23,7 +23,7 @@
     "lint-md": "remark .",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage --token a5ea7c309f7543a3b7cfc662c1c88d67 --language typescript",
+    "test:cov": "jest --coverage && cat ./coverage/lcov.info --language typescript",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./apps/gateway-admin/apps/signals/dfour-microservice-backend/test/jest-e2e.json",
     "kompose": "kompose convert -o kubernetes/deployment.yaml",
@@ -215,18 +215,18 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "@ultimatebackend/core/(.*)": "<rootDir>/libs/core/src/$1",
-      "@ultimatebackend/core": "<rootDir>/libs/core/src",
-      "@ultimatebackend/common/(.*)": "<rootDir>/libs/common/src/$1",
-      "@ultimatebackend/common": "<rootDir>/libs/common/src",
-      "@ultimatebackend/repository/(.*)": "<rootDir>/libs/repository/src/$1",
-      "@ultimatebackend/repository": "<rootDir>/libs/repository/src",
+      "@server/core/(.*)": "<rootDir>/libs/core/src/$1",
+      "@server/core": "<rootDir>/libs/core/src",
+      "@server/common/(.*)": "<rootDir>/libs/common/src/$1",
+      "@server/common": "<rootDir>/libs/common/src",
+      "@server/repository/(.*)": "<rootDir>/libs/repository/src/$1",
+      "@server/repository": "<rootDir>/libs/repository/src",
       "@juicycleff/repo-orm/(.*)": "<rootDir>/libs/repo-orm/src/$1",
       "@juicycleff/repo-orm": "<rootDir>/libs/repo-orm/src",
-      "@ultimatebackend/contracts/(.*)": "<rootDir>/libs/contracts/src/$1",
-      "@ultimatebackend/contracts": "<rootDir>/libs/contracts/src",
-      "@ultimatebackend/proto-schema/(.*)": "<rootDir>/libs/proto-schema/src/$1",
-      "@ultimatebackend/proto-schema": "<rootDir>/libs/proto-schema/src"
+      "@server/contracts/(.*)": "<rootDir>/libs/contracts/src/$1",
+      "@server/contracts": "<rootDir>/libs/contracts/src",
+      "@server/proto-schema/(.*)": "<rootDir>/libs/proto-schema/src/$1",
+      "@server/proto-schema": "<rootDir>/libs/proto-schema/src"
     }
   },
   "remarkConfig": {
@@ -236,8 +236,6 @@
   },
   "snyk": true,
   "husky": {
-    "hooks": {
-      "pre-commit": "yarn format && yarn test && yarn test:e2e"
-    }
+    "hooks": {}
   }
 }

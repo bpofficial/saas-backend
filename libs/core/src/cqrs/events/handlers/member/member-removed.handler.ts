@@ -4,7 +4,7 @@ import { MemberRemovedEvent } from '../../impl';
 
 @EventsHandler(MemberRemovedEvent)
 export class MemberRemovedHandler implements IEventHandler<MemberRemovedEvent> {
-  handle(event: MemberRemovedEvent): any {
-    Logger.log(event, 'MemberRemovedEvent');
-  }
+    handle(event: MemberRemovedEvent): any {
+        Logger.log(event, 'MemberRemovedEvent');
+    }
 }

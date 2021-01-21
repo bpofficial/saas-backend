@@ -14,20 +14,8 @@ export class ConfigService {
         }
     }
 
-    public get(key: string): string {
-        return process.env[key];
-    }
-
-    public getNumber(key: string): number {
-        return Number(this.get(key));
-    }
-
     get nodeEnv(): string {
         return this.get('NODE_ENV') || 'development';
-    }
-
-    isEnv(env: string) {
-        return this.get('NODE_ENV') === env;
     }
 
     get awsS3Config(): IAwsConfigInterface {
@@ -36,5 +24,17 @@ export class ConfigService {
             secretAccessKey: this.get('AWS_S3_SECRET_ACCESS_KEY'),
             bucketName: this.get('S3_BUCKET_NAME'),
         };
+    }
+
+    public get(key: string): string {
+        return process.env[key];
+    }
+
+    public getNumber(key: string): number {
+        return Number(this.get(key));
+    }
+
+    isEnv(env: string) {
+        return this.get('NODE_ENV') === env;
     }
 }

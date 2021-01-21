@@ -4,7 +4,7 @@ import { UserLoggedInEvent } from '../../impl';
 
 @EventsHandler(UserLoggedInEvent)
 export class UserLoggedInHandler implements IEventHandler<UserLoggedInEvent> {
-  handle(event: UserLoggedInEvent): any {
-    Logger.log(event, 'UserLoggedInHandler');
-  }
+    handle(event: UserLoggedInEvent): any {
+        Logger.log(event, 'UserLoggedInHandler');
+    }
 }

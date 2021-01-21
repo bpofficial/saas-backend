@@ -86,34 +86,34 @@
  *
  *
  *
-export interface Timestamp {
+ export interface Timestamp {
   /**
-   *  Represents seconds of UTC time since Unix epoch
-   *  1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to
-   *  9999-12-31T23:59:59Z inclusive.
-   *
+ *  Represents seconds of UTC time since Unix epoch
+ *  1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to
+ *  9999-12-31T23:59:59Z inclusive.
+ *
   seconds: number;
   /**
-   *  Non-negative fractions of a second at nanosecond resolution. Negative
-   *  second values with fractions must still have non-negative nanos values
-   *  that count forward in time. Must be from 0 to 999,999,999
-   *  inclusive.
-   *
+ *  Non-negative fractions of a second at nanosecond resolution. Negative
+ *  second values with fractions must still have non-negative nanos values
+ *  that count forward in time. Must be from 0 to 999,999,999
+ *  inclusive.
+ *
   nanos: number;
 }
 
-const baseTimestamp: object = {
+ const baseTimestamp: object = {
   seconds: 0,
   nanos: 0,
 };
 
-export interface DataLoaders {
+ export interface DataLoaders {
 
   getDataLoader<T>(identifier: string, constructorFn: () => T): T;
 
 }
 
-export const Timestamp = {
+ export const Timestamp = {
   fromJSON(object: any): Timestamp {
     const message = Object.create(baseTimestamp) as Timestamp;
     if (object.seconds !== undefined && object.seconds !== null) {
@@ -150,7 +150,7 @@ export const Timestamp = {
   },
 };
 
-type DeepPartial<T> = {
+ type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends Array<infer U>
     ? Array<DeepPartial<U>>
     : T[P] extends ReadonlyArray<infer U>
@@ -163,78 +163,80 @@ type DeepPartial<T> = {
             ? DeepPartial<T[P]>
             : T[P]
 };
-*/
+ */
 
 const baseTimestamp: object = {
-  seconds: 0,
-  nanos: 0,
+    seconds: 0,
+    nanos: 0,
 };
 
 export interface DataLoaders {
-  getDataLoader<T>(identifier: string, constructorFn: () => T): T;
+    getDataLoader<T>(identifier: string, constructorFn: () => T): T;
 }
 
 export class Timestamp {
-  /**
-   *  Represents seconds of UTC time since Unix epoch
-   *  1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to
-   *  9999-12-31T23:59:59Z inclusive.
-   */
-  seconds: number;
-  /**
-   *  Non-negative fractions of a second at nanosecond resolution. Negative
-   *  second values with fractions must still have non-negative nanos values
-   *  that count forward in time. Must be from 0 to 999,999,999
-   *  inclusive.
-   */
-  nanos: number;
+    /**
+     *  Represents seconds of UTC time since Unix epoch
+     *  1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to
+     *  9999-12-31T23:59:59Z inclusive.
+     */
+    seconds: number;
+    /**
+     *  Non-negative fractions of a second at nanosecond resolution. Negative
+     *  second values with fractions must still have non-negative nanos values
+     *  that count forward in time. Must be from 0 to 999,999,999
+     *  inclusive.
+     */
+    nanos: number;
 
-  static fromJSON(object: any): Timestamp {
-    const message = Object.create(baseTimestamp) as Timestamp;
-    if (object.seconds !== undefined && object.seconds !== null) {
-      message.seconds = Number(object.seconds);
-    } else {
-      message.seconds = 0;
+    static fromJSON(object: any): Timestamp {
+        const message = Object.create(baseTimestamp) as Timestamp;
+        if (object.seconds !== undefined && object.seconds !== null) {
+            message.seconds = Number(object.seconds);
+        } else {
+            message.seconds = 0;
+        }
+        if (object.nanos !== undefined && object.nanos !== null) {
+            message.nanos = Number(object.nanos);
+        } else {
+            message.nanos = 0;
+        }
+        return message;
     }
-    if (object.nanos !== undefined && object.nanos !== null) {
-      message.nanos = Number(object.nanos);
-    } else {
-      message.nanos = 0;
+
+    static fromPartial(object: DeepPartial<Timestamp>): Timestamp {
+        const message = Object.create(baseTimestamp) as Timestamp;
+        if (object.seconds !== undefined && object.seconds !== null) {
+            message.seconds = object.seconds;
+        } else {
+            message.seconds = 0;
+        }
+        if (object.nanos !== undefined && object.nanos !== null) {
+            message.nanos = object.nanos;
+        } else {
+            message.nanos = 0;
+        }
+        return message;
     }
-    return message;
-  }
-  static fromPartial(object: DeepPartial<Timestamp>): Timestamp {
-    const message = Object.create(baseTimestamp) as Timestamp;
-    if (object.seconds !== undefined && object.seconds !== null) {
-      message.seconds = object.seconds;
-    } else {
-      message.seconds = 0;
+
+    static toJSON(message: Timestamp): unknown {
+        const obj: any = {};
+        obj.seconds = message.seconds || 0;
+        obj.nanos = message.nanos || 0;
+        return obj;
     }
-    if (object.nanos !== undefined && object.nanos !== null) {
-      message.nanos = object.nanos;
-    } else {
-      message.nanos = 0;
-    }
-    return message;
-  }
-  static toJSON(message: Timestamp): unknown {
-    const obj: any = {};
-    obj.seconds = message.seconds || 0;
-    obj.nanos = message.nanos || 0;
-    return obj;
-  }
 }
 
 type DeepPartial<T> = {
-  [P in keyof T]?: T[P] extends Array<infer U>
-    ? Array<DeepPartial<U>>
-    : T[P] extends ReadonlyArray<infer U>
-    ? ReadonlyArray<DeepPartial<U>>
-    : T[P] extends Date | Function | Uint8Array | undefined
-    ? T[P]
-    : T[P] extends infer U | undefined
-    ? DeepPartial<U>
-    : T[P] extends object
-    ? DeepPartial<T[P]>
-    : T[P];
+    [P in keyof T]?: T[P] extends Array<infer U>
+        ? Array<DeepPartial<U>>
+        : T[P] extends ReadonlyArray<infer U>
+            ? ReadonlyArray<DeepPartial<U>>
+            : T[P] extends Date | Function | Uint8Array | undefined
+                ? T[P]
+                : T[P] extends infer U | undefined
+                    ? DeepPartial<U>
+                    : T[P] extends object
+                        ? DeepPartial<T[P]>
+                        : T[P];
 };

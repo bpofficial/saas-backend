@@ -5,9 +5,9 @@ import { ARANGO_DEFAULT_DATABASE_CONNECTION_NAME } from '../../constants';
  * @param containerName The unique name for the container
  */
 export function getArangoContainerToken(
-  containerName: string = ARANGO_DEFAULT_DATABASE_CONNECTION_NAME,
+    containerName: string = ARANGO_DEFAULT_DATABASE_CONNECTION_NAME,
 ) {
-  return `${containerName}Container`;
+    return `${containerName}Container`;
 }
 
 /**
@@ -15,9 +15,9 @@ export function getArangoContainerToken(
  * @param containerName The unique name for the container
  */
 export function getArangoClientToken(
-  containerName: string = ARANGO_DEFAULT_DATABASE_CONNECTION_NAME,
+    containerName: string = ARANGO_DEFAULT_DATABASE_CONNECTION_NAME,
 ) {
-  return `${containerName}Client`;
+    return `${containerName}Client`;
 }
 
 /**
@@ -25,7 +25,7 @@ export function getArangoClientToken(
  * @param containerName The unique name for the container
  */
 export function getArangoDbToken(
-  containerName: string = ARANGO_DEFAULT_DATABASE_CONNECTION_NAME,
+    containerName: string = ARANGO_DEFAULT_DATABASE_CONNECTION_NAME,
 ) {
-  return `${containerName}Db`;
+    return `${containerName}Db`;
 }

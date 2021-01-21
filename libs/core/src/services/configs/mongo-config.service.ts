@@ -15,8 +15,13 @@ export class MongoConfigService implements MongoOptionsFactory {
 
     createMongoOptions(): Promise<MongoModuleOptions> | MongoModuleOptions {
         const database = this.config.get<ConsulDatabaseConfig>('database');
+        console.log({
+            uri: jestMongoDb || `${database?.mongodb?.uri}${database?.mongodb?.name}?authSource=admin`,
+            dbName: global.__MONGO_DB_NAME__ || database?.mongodb?.name,
+            clientOptions: database.mongodb.options,
+        });
         return {
-            uri: jestMongoDb || `${database?.mongodb?.uri}${database?.mongodb?.name}`,
+            uri: jestMongoDb || `${database?.mongodb?.uri}${database?.mongodb?.name}?authSource=admin`,
             dbName: global.__MONGO_DB_NAME__ || database?.mongodb?.name,
             clientOptions: database.mongodb.options,
         };

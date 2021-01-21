@@ -1,12 +1,12 @@
 export enum TenantResolverType {
-  Domain,
-  Cookie,
-  Header,
-  Query,
+    Domain,
+    Cookie,
+    Header,
+    Query,
 }
 
 export enum TenantDatabaseStrategy {
-  DataIsolation,
-  DatabaseIsolation,
-  Both,
+    DataIsolation,
+    DatabaseIsolation,
+    Both,
 }

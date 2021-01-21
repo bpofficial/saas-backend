@@ -19,17 +19,17 @@ import { POST_KEY, PRE_KEY } from '../interfaces';
  * @returns
  */
 export const Before = (...events: DataEvents[]) => (
-  target: any,
-  name: string,
-  descriptor: TypedPropertyDescriptor<any>,
+    target: any,
+    name: string,
+    descriptor: TypedPropertyDescriptor<any>,
 ) => {
-  for (const event of events) {
-    const fns = Reflect.getMetadata(`${PRE_KEY}_${event}`, target) || [];
-    // you must create new array so you don't push fn into siblings
-    // see https://github.com/rbuckton/reflect-metadata/issues/53#issuecomment-274906502
-    const result = fns ? fns.concat([target[name]]) : [target[name]];
-    Reflect.defineMetadata(`${PRE_KEY}_${event}`, result, target);
-  }
+    for (const event of events) {
+        const fns = Reflect.getMetadata(`${PRE_KEY}_${event}`, target) || [];
+        // you must create new array so you don't push fn into siblings
+        // see https://github.com/rbuckton/reflect-metadata/issues/53#issuecomment-274906502
+        const result = fns ? fns.concat([target[name]]) : [target[name]];
+        Reflect.defineMetadata(`${PRE_KEY}_${event}`, result, target);
+    }
 };
 
 /**
@@ -50,15 +50,15 @@ export const Before = (...events: DataEvents[]) => (
  * @returns
  */
 export const After = (...events: DataEvents[]) => (
-  target: any,
-  name: string,
-  descriptor: TypedPropertyDescriptor<any>,
+    target: any,
+    name: string,
+    descriptor: TypedPropertyDescriptor<any>,
 ) => {
-  for (const event of events) {
-    const fns = Reflect.getMetadata(`${POST_KEY}_${event}`, target) || [];
-    // you must create new array so you don't push fn into siblings
-    // see https://github.com/rbuckton/reflect-metadata/issues/53#issuecomment-274906502
-    const result = fns ? fns.concat([target[name]]) : [target[name]];
-    Reflect.defineMetadata(`${POST_KEY}_${event}`, result, target);
-  }
+    for (const event of events) {
+        const fns = Reflect.getMetadata(`${POST_KEY}_${event}`, target) || [];
+        // you must create new array so you don't push fn into siblings
+        // see https://github.com/rbuckton/reflect-metadata/issues/53#issuecomment-274906502
+        const result = fns ? fns.concat([target[name]]) : [target[name]];
+        Reflect.defineMetadata(`${POST_KEY}_${event}`, result, target);
+    }
 };

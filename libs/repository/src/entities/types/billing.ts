@@ -3,22 +3,22 @@ import { AggregateRoot } from '@nestjs/cqrs';
 import { Type } from 'class-transformer';
 
 export class CardEntity extends AggregateRoot {
-  id: string;
+    id: string;
 
-  name: string;
+    name: string;
 
-  number: string;
+    number: string;
 
-  brand?: string;
+    brand?: string;
 
-  lastFourDigit?: string;
+    lastFourDigit?: string;
 
-  currency?: string;
+    currency?: string;
 
-  @Type(() => Address)
-  address?: Address;
+    @Type(() => Address)
+    address?: Address;
 
-  expMonth: number;
+    expMonth: number;
 
-  expYear: number;
+    expYear: number;
 }

@@ -4,8 +4,8 @@ import { AccessTokenCreatedEvent } from '../../impl';
 
 @EventsHandler(AccessTokenCreatedEvent)
 export class AccessTokenCreatedHandler
-  implements IEventHandler<AccessTokenCreatedEvent> {
-  handle(event: AccessTokenCreatedEvent): any {
-    Logger.log(event, 'AccessTokenCreatedEvent'); // write here
-  }
+    implements IEventHandler<AccessTokenCreatedEvent> {
+    handle(event: AccessTokenCreatedEvent): any {
+        Logger.log(event, 'AccessTokenCreatedEvent'); // write here
+    }
 }

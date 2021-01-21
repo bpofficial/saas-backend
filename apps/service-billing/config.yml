@@ -4,16 +4,17 @@ billing:
         name: "svc-billing"
 
 stripe:
-    apiKey: "*******_6776"
+    apiKey: sk_test_51IBv6sD5hZ1P68xfO8Ks17mPHbaDXT5AHTUoOhxhxfpNezSTjCo3mSLRGNsLcV7Htg9IE5c9jRZF0sBTtFHVc8Yu00xNBSEpin
 
 database:
     mongodb:
         uri: mongodb://localhost:27017/
         name: svc-billing
         options:
+            useNewUrlParser: true
             auth:
                 user: "root"
-                pass: "changeit"
+                password: "changeit"
 
     eventstore:
         poolMax:

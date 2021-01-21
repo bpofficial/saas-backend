@@ -4,8 +4,8 @@ import { PaymentMethodAddedEvent } from '../../impl';
 
 @EventsHandler(PaymentMethodAddedEvent)
 export class PaymentMethodCreatedHandler
-  implements IEventHandler<PaymentMethodAddedEvent> {
-  handle(event: PaymentMethodAddedEvent): any {
-    Logger.log(event, 'PaymentMethodAddedEvent'); // write here
-  }
+    implements IEventHandler<PaymentMethodAddedEvent> {
+    handle(event: PaymentMethodAddedEvent): any {
+        Logger.log(event, 'PaymentMethodAddedEvent'); // write here
+    }
 }

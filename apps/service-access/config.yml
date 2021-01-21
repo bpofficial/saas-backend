@@ -8,7 +8,8 @@ database:
         uri: mongodb://localhost:27017/
         name: svc-access
         options:
-            replicaSet: ""
+            useUnifiedTopology: true
+            useNewUrlParser: true
             auth:
                 user: "root"
                 password: "changeit"

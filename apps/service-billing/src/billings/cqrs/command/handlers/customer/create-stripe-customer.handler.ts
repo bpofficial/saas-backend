@@ -1,6 +1,6 @@
 import { Logger } from '@nestjs/common';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
-import { Customer, StripeUserCreatedEvent } from '@server/core';
+import { Customer } from '@server/core';
 import { CreateStripeCustomerCommand } from '../../impl';
 import { InjectStripe } from 'nestjs-stripe';
 import * as Stripe from 'stripe';
@@ -49,7 +49,7 @@ export class CreateStripeCustomerHandler
                 ...customer,
             };
 
-            await this.eventBus.publish(new StripeUserCreatedEvent(customerMod));
+            //await this.eventBus.publish(new StripeUserCreatedEvent(customerMod));
             return {
                 customer: {
                     email: customerMod.email,

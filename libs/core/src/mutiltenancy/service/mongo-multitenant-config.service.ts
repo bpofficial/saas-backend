@@ -29,6 +29,7 @@ export class MongoMultiTenantConfigService implements MongoOptionsFactory {
 
     createMongoOptions(): Promise<MongoModuleOptions> | MongoModuleOptions {
         const database = this.config.get<ConsulDatabaseConfig>('database');
+        console.log(database);
         const metadata: Metadata = this.context.getContext();
         const gmap = metadata.getMap();
         let tenantInfo: TenantInfo = null;
@@ -103,6 +104,7 @@ export class MongoMultiTenantConfigService implements MongoOptionsFactory {
             }
         }
 
+
         /**
          * Applying the right connection string for DataIsolation database strategy
          */
@@ -125,6 +127,7 @@ export class MongoMultiTenantConfigService implements MongoOptionsFactory {
             uri,
             dbName: databaseName,
             clientOptions: {
+                ...database.mongodb.options,
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
             },

@@ -4,7 +4,7 @@ import { PlanUpdatedEvent } from '../../impl';
 
 @EventsHandler(PlanUpdatedEvent)
 export class PlanUpdatedHandler implements IEventHandler<PlanUpdatedEvent> {
-  handle(event: PlanUpdatedEvent): any {
-    Logger.log(event, 'PlanUpdatedEvent'); // write here
-  }
+    handle(event: PlanUpdatedEvent): any {
+        Logger.log(event, 'PlanUpdatedEvent'); // write here
+    }
 }

@@ -85,6 +85,7 @@ export class CreateSubscriptionHandler
                 subscription: subsToProtoStripeSubs(sub),
             };
         } catch (error) {
+            console.log(error);
             this.logger.log(error);
             throw new RpcException(error);
         }

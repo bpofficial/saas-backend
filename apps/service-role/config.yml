@@ -8,6 +8,8 @@ database:
         uri: mongodb://localhost:27017/
         name: svc-role
         options:
+            useNewUrlParser: true
+            useUnifiedTopology: true
             auth:
                 user: "root"
                 password: "changeit"

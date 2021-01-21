@@ -4,7 +4,7 @@ import { TenantUpdatedEvent } from '../../impl';
 
 @EventsHandler(TenantUpdatedEvent)
 export class TenantUpdatedHandler implements IEventHandler<TenantUpdatedEvent> {
-  handle(event: TenantUpdatedEvent): any {
-    Logger.log(event, 'TenantUpdatedEvent');
-  }
+    handle(event: TenantUpdatedEvent): any {
+        Logger.log(event, 'TenantUpdatedEvent');
+    }
 }

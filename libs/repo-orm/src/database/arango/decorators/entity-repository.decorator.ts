@@ -10,9 +10,9 @@ import { COLLECTION_KEY, ENTITY_KEY } from '../../../interfaces';
  * @returns
  */
 export const ArangoEntityRepository = (props: ArangoCollectionProps) => (
-  target: any,
+    target: any,
 ) => {
-  Reflect.defineMetadata(COLLECTION_KEY, props, target.prototype);
+    Reflect.defineMetadata(COLLECTION_KEY, props, target.prototype);
 };
 
 /**
@@ -23,5 +23,5 @@ export const ArangoEntityRepository = (props: ArangoCollectionProps) => (
  * @returns
  */
 export const ArangoEntity = (props?: ArangoEntityProps) => (target: any) => {
-  Reflect.defineMetadata(ENTITY_KEY, props, target.prototype);
+    Reflect.defineMetadata(ENTITY_KEY, props, target.prototype);
 };

@@ -140,16 +140,6 @@ export class MongoCoreModule implements OnModuleDestroy {
         };
     }
 
-    async onModuleDestroy() {
-        const clientsMap: Map<any, MongoClient> = this.moduleRef.get<Map<any, MongoClient>>(getContainerToken(this.containerName));
-
-        if (clientsMap) {
-            await Promise.all(
-                [...clientsMap.values()].map((connection) => connection.close()),
-            );
-        }
-    }
-
     private static createAsyncProviders(
         options: MongoModuleAsyncOptions,
     ): Provider[] {
@@ -222,6 +212,16 @@ export class MongoCoreModule implements OnModuleDestroy {
             };
         } else {
             throw new Error('Invalid MongoModule options');
+        }
+    }
+
+    async onModuleDestroy() {
+        const clientsMap: Map<any, MongoClient> = this.moduleRef.get<Map<any, MongoClient>>(getContainerToken(this.containerName));
+
+        if (clientsMap) {
+            await Promise.all(
+                [...clientsMap.values()].map((connection) => connection.close()),
+            );
         }
     }
 }

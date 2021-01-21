@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongoModule } from '@juicycleff/repo-orm';
-import { CoreModule, ServiceRegistryModule } from '@server/core';
+import { CoreModule, MongoConfigService, ServiceRegistryModule } from '@server/core';
 import { StripeModule } from 'nestjs-stripe';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -9,7 +9,6 @@ import { CommonModule } from './common/common.module';
 import { StripeModuleConfigService } from './common';
 import { BillingsModule } from './billings/billings.module';
 import { PlansModule } from './plans/plans.module';
-import { MongoMultiTenantConfigService } from '@server/core/mutiltenancy';
 
 @Module({
     imports: [
@@ -17,7 +16,7 @@ import { MongoMultiTenantConfigService } from '@server/core/mutiltenancy';
         CommonModule,
         CoreModule,
         MongoModule.registerAsync({
-            useClass: MongoMultiTenantConfigService,
+            useClass: MongoConfigService,
         }),
         StripeModule.forRootAsync({
             useClass: StripeModuleConfigService,

@@ -4,17 +4,19 @@ account:
         name: "notification-queue"
 
 sendgrid:
-    apiKey: "SG.*****************************************************"
-    sender: "server <no-reply@server.io>"
+    apiKey: "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"
+    sender: "Aleus_noreply <no-reply@aleus.app>"
 
 database:
     mongodb:
         uri: mongodb://localhost:27017/
         name: svc-notification
         options:
+            useNewUrlParser: true
+            useUnifiedTopology: true
             auth:
                 user: "root"
-                pass: "changeit"
+                password: "changeit"
 
     eventstore:
         poolMax:

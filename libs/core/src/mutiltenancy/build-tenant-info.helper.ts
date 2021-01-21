@@ -15,6 +15,10 @@ export class BuildTenantInfoHelper {
         return this;
     }
 
+    build(): TenantInfo {
+        return this.init();
+    }
+
     private makeTenantInfo(
         tenantId: string,
         config: MultiTenancyConfig,
@@ -93,9 +97,5 @@ export class BuildTenantInfoHelper {
             this.addOptions ? this.options : null,
             accessToken,
         );
-    }
-
-    build(): TenantInfo {
-        return this.init();
     }
 }

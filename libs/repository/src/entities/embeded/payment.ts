@@ -1,21 +1,21 @@
 /* tslint:disable:max-classes-per-file */
 
 export class PriceEmbed {
-  amount: number;
+    amount: number;
 
-  name?: string;
+    name?: string;
 
-  id?: string;
+    id?: string;
 
-  description?: string;
+    description?: string;
 
-  trialDays?: number;
+    trialDays?: number;
 
-  currency?: string;
+    currency?: string;
 }
 
 export class KeyValuePair {
-  key: string;
+    key: string;
 
-  value?: string;
+    value?: string;
 }

@@ -3,7 +3,7 @@ import { PlanDeletedHandler } from './plan-deleted.handler';
 import { PlanUpdatedHandler } from './plan-updated.handler';
 
 export const PlanEventHandlers = [
-  PlanCreatedHandler,
-  PlanDeletedHandler,
-  PlanUpdatedHandler,
+    PlanCreatedHandler,
+    PlanDeletedHandler,
+    PlanUpdatedHandler,
 ];

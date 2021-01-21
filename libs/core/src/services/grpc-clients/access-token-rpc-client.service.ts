@@ -5,17 +5,16 @@ import { SERVICE_LIST } from '../../constants';
 
 @Injectable()
 export class AccessTokenRpcClientService {
-  @RpcClient({
-    service: SERVICE_LIST.access.consulName,
-    package: SERVICE_LIST.access.package,
-    protoPath: SERVICE_LIST.access.protoPath,
-  })
-  private readonly client: GrpcClient;
-
-  @Service(SERVICE_LIST.access.service, {
-    service: SERVICE_LIST.access.consulName,
-    package: SERVICE_LIST.access.package,
-    protoPath: SERVICE_LIST.access.protoPath,
-  })
-  public svc: AccessServiceClient<any>;
+    @Service(SERVICE_LIST.access.service, {
+        service: SERVICE_LIST.access.consulName,
+        package: SERVICE_LIST.access.package,
+        protoPath: SERVICE_LIST.access.protoPath,
+    })
+    public svc: AccessServiceClient<any>;
+    @RpcClient({
+        service: SERVICE_LIST.access.consulName,
+        package: SERVICE_LIST.access.package,
+        protoPath: SERVICE_LIST.access.protoPath,
+    })
+    private readonly client: GrpcClient;
 }

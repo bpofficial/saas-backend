@@ -3,9 +3,9 @@ import { BaseEntity } from './base-entity';
 
 @Entity({ name: 'projects' })
 export class ProjectEntity extends BaseEntity<any> {
-  name: string;
+    name: string;
 
-  description?: string;
+    description?: string;
 
-  tenantId?: string;
+    tenantId?: string;
 }

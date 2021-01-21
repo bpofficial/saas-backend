@@ -1,11 +1,11 @@
 export class SocialAuth {
-  userId: string = null;
+    userId: string = null;
 
-  accessToken?: string = null;
+    accessToken?: string = null;
 
-  email: string = null;
+    email: string = null;
 }
 
 export class LocalAuth {
-  hashed: string = null;
+    hashed: string = null;
 }

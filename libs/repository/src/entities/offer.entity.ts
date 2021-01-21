@@ -4,23 +4,23 @@ import { BaseEntity } from './base-entity';
 
 @Entity({ name: 'offer' })
 export class OfferEntity extends BaseEntity<any> {
-  name: string;
+    name: string;
 
-  description: string;
+    description: string;
 
-  code: string;
+    code: string;
 
-  startDate?: Date | string;
+    startDate?: Date | string;
 
-  endDate?: Date | string;
+    endDate?: Date | string;
 
-  discountPercentage?: number;
+    discountPercentage?: number;
 
-  discountMonths?: number;
+    discountMonths?: number;
 
-  discountAmount?: number;
+    discountAmount?: number;
 
-  discountEndDate?: Date | string;
+    discountEndDate?: Date | string;
 
-  plans?: ObjectID[];
+    plans?: ObjectID[];
 }

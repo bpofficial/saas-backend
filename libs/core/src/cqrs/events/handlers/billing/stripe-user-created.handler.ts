@@ -4,8 +4,8 @@ import { StripeUserCreatedEvent } from '../../impl';
 
 @EventsHandler(StripeUserCreatedEvent)
 export class StripeUserCreatedHandler
-  implements IEventHandler<StripeUserCreatedEvent> {
-  handle(event: StripeUserCreatedEvent): any {
-    Logger.log(event, 'StripeUserCreatedEvent'); // write here
-  }
+    implements IEventHandler<StripeUserCreatedEvent> {
+    handle(event: StripeUserCreatedEvent): any {
+        Logger.log(event, 'StripeUserCreatedEvent'); // write here
+    }
 }

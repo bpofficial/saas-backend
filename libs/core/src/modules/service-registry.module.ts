@@ -64,4 +64,5 @@ import { TerminusModule } from '@nestjs/terminus';
         }),
     ],
 })
-export class ServiceRegistryModule {}
+export class ServiceRegistryModule {
+}

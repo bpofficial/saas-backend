@@ -19,7 +19,10 @@ export class SendgridConfigService implements SendGridModuleOptionsFactory {
             apikey: sendgrid.apiKey,
             defaultMailData: {
                 from: sendgrid.sender,
-                content: null,
+                content: [{
+                    type: '',
+                    value: '',
+                }],
                 trackingSettings: {
                     clickTracking: {
                         enable: true,

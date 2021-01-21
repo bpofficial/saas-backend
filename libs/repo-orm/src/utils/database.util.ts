@@ -5,9 +5,9 @@ import { DEFAULT_DATABASE_CONNECTION_NAME } from '../constants';
  * @param containerName The unique name for the container
  */
 export function getContainerToken(
-  containerName: string = DEFAULT_DATABASE_CONNECTION_NAME,
+    containerName: string = DEFAULT_DATABASE_CONNECTION_NAME,
 ) {
-  return `${containerName}Container`;
+    return `${containerName}Container`;
 }
 
 /**
@@ -15,9 +15,9 @@ export function getContainerToken(
  * @param containerName The unique name for the container
  */
 export function getContainerTenantConfig(
-  containerName: string = DEFAULT_DATABASE_CONNECTION_NAME,
+    containerName: string = DEFAULT_DATABASE_CONNECTION_NAME,
 ) {
-  return `${containerName}TenantConfig`;
+    return `${containerName}TenantConfig`;
 }
 
 /**
@@ -25,9 +25,9 @@ export function getContainerTenantConfig(
  * @param containerName The unique name for the container
  */
 export function getClientToken(
-  containerName: string = DEFAULT_DATABASE_CONNECTION_NAME,
+    containerName: string = DEFAULT_DATABASE_CONNECTION_NAME,
 ) {
-  return `${containerName}Client`;
+    return `${containerName}Client`;
 }
 
 /**
@@ -35,9 +35,9 @@ export function getClientToken(
  * @param containerName The unique name for the container
  */
 export function getReactiveClientToken(
-  containerName: string = DEFAULT_DATABASE_CONNECTION_NAME,
+    containerName: string = DEFAULT_DATABASE_CONNECTION_NAME,
 ) {
-  return `${containerName}ReactiveClient`;
+    return `${containerName}ReactiveClient`;
 }
 
 /**
@@ -45,9 +45,9 @@ export function getReactiveClientToken(
  * @param containerName The unique name for the container
  */
 export function getCurrentTenantToken(
-  containerName: string = DEFAULT_DATABASE_CONNECTION_NAME,
+    containerName: string = DEFAULT_DATABASE_CONNECTION_NAME,
 ) {
-  return `${containerName}CurrentTenant`;
+    return `${containerName}CurrentTenant`;
 }
 
 /**
@@ -55,9 +55,9 @@ export function getCurrentTenantToken(
  * @param containerName The unique name for the container
  */
 export function getDbToken(
-  containerName: string = DEFAULT_DATABASE_CONNECTION_NAME,
+    containerName: string = DEFAULT_DATABASE_CONNECTION_NAME,
 ) {
-  return `${containerName}Db`;
+    return `${containerName}Db`;
 }
 
 /**
@@ -65,7 +65,7 @@ export function getDbToken(
  * @param containerName The unique name for the container
  */
 export function getCollectionToken(containerName: string) {
-  return `${containerName}Collection`;
+    return `${containerName}Collection`;
 }
 
 /**
@@ -73,5 +73,5 @@ export function getCollectionToken(containerName: string) {
  * @param containerName The unique name for the container
  */
 export function getEdgeCollectionToken(containerName: string) {
-  return `${containerName}EdgeCollection`;
+    return `${containerName}EdgeCollection`;
 }

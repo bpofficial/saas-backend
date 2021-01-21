@@ -4,7 +4,7 @@ import { MemberInvitedEvent } from '../../impl';
 
 @EventsHandler(MemberInvitedEvent)
 export class MemberInvitedHandler implements IEventHandler<MemberInvitedEvent> {
-  handle(event: MemberInvitedEvent): any {
-    Logger.log(event, 'MemberInvitedEvent');
-  }
+    handle(event: MemberInvitedEvent): any {
+        Logger.log(event, 'MemberInvitedEvent');
+    }
 }

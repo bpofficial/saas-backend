@@ -8,9 +8,11 @@ database:
         uri: mongodb://localhost:27017/
         name: svc-webhook
         options:
+            useNewUrlParser: true
+            useUnifiedTopology: true
             auth:
                 user: "root"
-                pass: "changeit"
+                password: "changeit"
 
     eventstore:
         poolMax:

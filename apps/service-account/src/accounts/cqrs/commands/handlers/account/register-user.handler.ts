@@ -156,7 +156,7 @@ export class RegisterUserHandler
                 service?: 'social' | 'local';
             } = await this.userRepository.findOneByIdAndUpdate(result.id.toString(), {
                 updates: {
-                    $set: { 'settings.stripeId': customer.customer.id },
+                    'settings.stripeId': customer.customer.id,
                 },
             });
             /** Attach the activation link for the event. This is important for the

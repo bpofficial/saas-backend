@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { UserRepository } from '@server/repository';
+import { RepositoryModule } from '@server/repository/repository.module';
 import { EventStoreModule, EventStoreSubscriptionType } from '@juicycleff/nestjs-event-store';
 import {
     AccountEventHandlers,
@@ -42,10 +42,10 @@ import { JwtModule } from '@nestjs/jwt';
                 StripeUserCreatedEvent: (data) => new StripeUserCreatedEvent(data),
             },
         }),
+        RepositoryModule,
     ],
     providers: [
         AccountSagas,
-        UserRepository,
         RolesRpcClientService,
         BillingsRpcClientService,
         ...AccountQueryHandlers,

@@ -2,24 +2,22 @@ import { AggregateRoot } from '@nestjs/cqrs';
 import { ObjectID } from 'mongodb';
 import { BaseDto } from '../dtos';
 
-export abstract class BaseEntity<
-  T extends BaseDto = BaseDto
-> extends AggregateRoot {
-  id?: ObjectID | string;
+export abstract class BaseEntity<T extends BaseDto = BaseDto> extends AggregateRoot {
+    id?: ObjectID | string;
 
-  createdBy?: ObjectID | string;
+    createdBy?: ObjectID | string;
 
-  createdAt?: Date;
+    createdAt?: Date;
 
-  updatedAt?: Date;
+    updatedAt?: Date;
 
-  deletedAt?: Date = null;
+    deletedAt?: Date = null;
 
-  deleted?: boolean = false;
+    deleted?: boolean = false;
 
-  version?: number = null;
+    version?: number = null;
 
-  toDtoClass?: new (entity: BaseEntity, options?: any) => T;
+    toDtoClass?: new (entity: BaseEntity, options?: any) => T;
 
-  // toDto = (options?: any) => DtoMapperUtils.toDto(this.toDtoClass, this, options);
+    // toDto = (options?: any) => DtoMapperUtils.toDto(this.toDtoClass, this, options);
 }

@@ -1,9 +1,9 @@
 export class TenantAccessEmbed {
-  key: string;
+    key: string;
 
-  secret: string;
+    secret: string;
 
-  active: boolean;
+    active: boolean;
 
-  createdAt?: Date | string;
+    createdAt?: Date | string;
 }

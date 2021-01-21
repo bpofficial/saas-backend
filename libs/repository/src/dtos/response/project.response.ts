@@ -2,6 +2,6 @@
 import { BaseDto } from '../base.dto';
 
 export class ProjectResponseDto extends BaseDto {
-  // @IsNotEmpty()
-  name: string;
+    // @IsNotEmpty()
+    name: string;
 }

@@ -7,43 +7,43 @@ export const PRE_KEY = 'pre';
 export const POST_KEY = 'post';
 
 export interface UpdateByIdRequest {
-  updates: any;
-  upsert?: boolean;
+    updates: any;
+    upsert?: boolean;
 }
 
 export interface UpdateRequest extends UpdateByIdRequest {
-  conditions: any;
+    conditions: any;
 }
 
 export interface UpdateOneRequest {
-  updates: any;
-  conditions: any;
+    updates: any;
+    conditions: any;
 }
 
 export interface FindRequest {
-  conditions: any;
-  limit?: number;
-  projection?: any;
-  sort?: any;
-  skip?: number;
+    conditions: any;
+    limit?: number;
+    projection?: any;
+    sort?: any;
+    skip?: number;
 }
 
 export interface PageInfoOffsets {
-  before: string | null;
-  after: string | null;
-  first: number | null;
-  last: number | null;
-  afterOffset: number;
-  beforeOffset: number;
-  startOffset: number;
-  endOffset: number;
-  startCursorOffset: number;
-  endCursorOffset: number;
+    before: string | null;
+    after: string | null;
+    first: number | null;
+    last: number | null;
+    afterOffset: number;
+    beforeOffset: number;
+    startOffset: number;
+    endOffset: number;
+    startCursorOffset: number;
+    endCursorOffset: number;
 }
 
 export type Offsets = PageInfoOffsets & {
-  skip: number;
-  limit: number;
+    skip: number;
+    limit: number;
 };
 
 /**
@@ -55,80 +55,80 @@ export type ConnectionCursor = string;
  * A flow type describing the arguments a connection field receives in GraphQL.
  */
 export interface ConnectionArguments {
-  before?: ConnectionCursor | null;
-  after?: ConnectionCursor | null;
-  first?: number | null;
-  last?: number | null;
+    before?: ConnectionCursor | null;
+    after?: ConnectionCursor | null;
+    first?: number | null;
+    last?: number | null;
 }
 
 export interface CursorPaginationRequest {
-  conditions: any;
-  args?: ConnectionArguments;
-  projection?: any;
-  sort?: any;
-  orderField?: string;
-  order?: number;
+    conditions: any;
+    args?: ConnectionArguments;
+    projection?: any;
+    sort?: any;
+    orderField?: string;
+    order?: number;
 }
 
 export interface CollectionProps {
-  name: string;
-  capped?: boolean;
-  size?: number;
-  max?: number;
-  supportTenant?: boolean;
-  caching?: boolean;
+    name: string;
+    capped?: boolean;
+    size?: number;
+    max?: number;
+    supportTenant?: boolean;
+    caching?: boolean;
 }
 
 export interface EntityProps {
-  name?: string;
-  supportTenant?: boolean;
+    name?: string;
+    supportTenant?: boolean;
 }
 
 export interface IndexDefinition {
-  // The fields to index on
-  fields: { [fieldName: string]: string | any };
-  // overwrite the index if it exists and isn't the same
-  overwrite?: boolean;
+    // The fields to index on
+    fields: { [fieldName: string]: string | any };
+    // overwrite the index if it exists and isn't the same
+    overwrite?: boolean;
 }
 
 export interface TenantData {
-  tenantId?: string;
+    tenantId?: string;
 }
 
 export interface CursorInfo {
-  endCursor?: string;
-  hasNextPage?: boolean;
-  startCursor?: string;
-  hasPreviousPage?: boolean;
+    endCursor?: string;
+    hasNextPage?: boolean;
+    startCursor?: string;
+    hasPreviousPage?: boolean;
 }
 
 export interface TotalCountOptions {
-  cursor: Cursor<any>;
+    cursor: Cursor<any>;
 }
 
 export class CursorEdge<T> {
-  node: T;
-  cursor: string;
+    node: T;
+    cursor: string;
 }
 
 export class CursorResponse<T> {
-  edges?: Array<CursorEdge<T>>;
-  list?: T[];
-  pageInfo?: CursorInfo;
-  totalCount?: number;
+    edges?: Array<CursorEdge<T>>;
+    list?: T[];
+    pageInfo?: CursorInfo;
+    totalCount?: number;
 }
 
 export type PageInfoOptions<T> = PageInfoOffsets & {
-  edges: Array<{
-    cursor: string;
-    node: T;
-  }>;
-  totalCount: number;
+    edges: Array<{
+        cursor: string;
+        node: T;
+    }>;
+    totalCount: number;
 };
 
 export interface OffsetOptions {
-  // Connection Args
-  args: ConnectionArguments;
-  // total Count
-  totalCount: number;
+    // Connection Args
+    args: ConnectionArguments;
+    // total Count
+    totalCount: number;
 }

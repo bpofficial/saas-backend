@@ -12,6 +12,7 @@ import {
     SubscriptionQueryHandlers,
 } from './cqrs';
 import { PlanRepository } from '@server/repository';
+import { StripeUserCreatedEvent } from '@server/core';
 
 @Module({
     imports: [
@@ -24,7 +25,9 @@ import { PlanRepository } from '@server/repository';
                     stream: '$ce-billing',
                 },
             ],
-            eventHandlers: {},
+            eventHandlers: {
+                StripeUserCreatedEvent: data => new StripeUserCreatedEvent(data),
+            },
         }),
         CardsModule,
         PlansModule,

@@ -6,10 +6,10 @@ import { ForgotPasswordSentHandler } from './forgot-password-sent.handler';
 import { UserPasswordUpdatedHandler } from './user-password-updated.handler';
 
 export const AccountEventHandlers = [
-  UserRegisteredHandler,
-  UserLoggedInHandler,
-  EmailVerifiedHandler,
-  VerificationEmailSentHandler,
-  ForgotPasswordSentHandler,
-  UserPasswordUpdatedHandler,
+    UserRegisteredHandler,
+    UserLoggedInHandler,
+    EmailVerifiedHandler,
+    VerificationEmailSentHandler,
+    ForgotPasswordSentHandler,
+    UserPasswordUpdatedHandler,
 ];

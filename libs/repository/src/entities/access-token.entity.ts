@@ -3,15 +3,15 @@ import { BaseEntity } from './base-entity';
 
 @Entity({ name: 'access-token' })
 export class AccessTokenEntity extends BaseEntity<any> {
-  name: string;
+    name: string;
 
-  token: string;
+    token: string;
 
-  tenantId?: string;
+    tenantId?: string;
 
-  expireAt?: Date | string;
+    expireAt?: Date | string;
 
-  scopes?: string[];
+    scopes?: string[];
 
-  active: boolean;
+    active: boolean;
 }

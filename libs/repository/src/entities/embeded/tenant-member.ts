@@ -5,36 +5,36 @@ import { AppRole, InvitationStatus } from '@server/contracts';
 
 @Entity({ name: 'tenant-member' })
 export class TenantMemberEmbed {
-  id!: string | ObjectID;
+    id!: string | ObjectID;
 
-  email: string;
+    email: string;
 
-  userId?: ObjectID | string;
+    userId?: ObjectID | string;
 
-  status!: InvitationStatus;
+    status!: InvitationStatus;
 
-  role: AppRole;
+    role: AppRole;
 
-  invitedBy!: string | ObjectID | any;
+    invitedBy!: string | ObjectID | any;
 
-  createdAt!: Date | string;
+    createdAt!: Date | string;
 
-  updatedAt!: Date | string;
+    updatedAt!: Date | string;
 }
 
 export class BillingSettingEmbed {
-  currentPlan?: string;
+    currentPlan?: string;
 
-  currentSubscription?: string;
+    currentSubscription?: string;
 }
 
 export class TenantSettingsEmbed {
-  database?: DbConnectionEmbed;
-  enableTheme?: boolean;
+    database?: DbConnectionEmbed;
+    enableTheme?: boolean;
 }
 
 export class DbConnectionEmbed {
-  host?: string;
+    host?: string;
 
-  port?: string;
+    port?: string;
 }

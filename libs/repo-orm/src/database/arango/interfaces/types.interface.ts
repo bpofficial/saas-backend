@@ -3,92 +3,92 @@ import { Database } from 'arangojs';
 import { LoadBalancingStrategy } from 'arangojs/lib/async/connection';
 
 export interface ArangoCollectionProps extends CollectionProps {
-  indexes?: ArangoIndexDefinition[];
-  edgeType?: boolean;
-  overwrite?: boolean;
+    indexes?: ArangoIndexDefinition[];
+    edgeType?: boolean;
+    overwrite?: boolean;
 }
 
 export interface ArangoEntityProps extends EntityProps {
-  indexes?: ArangoIndexDefinition[];
+    indexes?: ArangoIndexDefinition[];
 }
 
 export interface ArangoDocument {
-  // id?: string | ObjectID;
-  [key: string]: any;
+    // id?: string | ObjectID;
+    [key: string]: any;
 }
 
 export interface ArangoDBSource {
-  db: Promise<Database> | Database;
+    db: Promise<Database> | Database;
 }
 
 export type ArangoIndexDefinition =
-  | {
-      type: 'hash';
-      fields: string[];
-      opts: {
+    | {
+    type: 'hash';
+    fields: string[];
+    opts: {
         name?: string;
         unique: boolean;
         sparse?: boolean;
         deduplicate?: boolean;
-      };
-    }
-  | {
-      type: 'geo';
-      fields: string[];
-      opts: {
+    };
+}
+    | {
+    type: 'geo';
+    fields: string[];
+    opts: {
         name?: string;
         geoJson?: boolean;
-      };
-    }
-  | {
-      type: 'skiplist';
-      fields: string[];
-      opts: {
+    };
+}
+    | {
+    type: 'skiplist';
+    fields: string[];
+    opts: {
         unique: boolean;
         name?: string;
         sparse?: boolean;
         deduplicate?: boolean;
-      };
-    }
-  | {
-      type: 'persistent';
-      opts: {
+    };
+}
+    | {
+    type: 'persistent';
+    opts: {
         name?: string;
         unique: boolean;
         sparse?: boolean;
-      };
-      fields: string[];
-    }
-  | {
-      type: 'ttl';
-      expireAfter: number;
-      fields: string[];
-      opts: {
-        name?: string;
-      };
-    }
-  | {
-      type: 'fulltext';
-      minLength?: number;
-      fields: string[];
-      opts: {
-        name?: string;
-      };
     };
+    fields: string[];
+}
+    | {
+    type: 'ttl';
+    expireAfter: number;
+    fields: string[];
+    opts: {
+        name?: string;
+    };
+}
+    | {
+    type: 'fulltext';
+    minLength?: number;
+    fields: string[];
+    opts: {
+        name?: string;
+    };
+};
 
 export interface ArangoClientOption {
-  url: string | string[];
-  username: string;
-  password: string;
-  isAbsolute?: boolean;
-  arangoVersion?: number;
-  loadBalancingStrategy?: LoadBalancingStrategy;
-  maxRetries?: false | number;
-  agent?: any;
-  agentOptions?: {
-    [key: string]: any;
-  };
-  headers?: {
-    [key: string]: string;
-  };
+    url: string | string[];
+    username: string;
+    password: string;
+    isAbsolute?: boolean;
+    arangoVersion?: number;
+    loadBalancingStrategy?: LoadBalancingStrategy;
+    maxRetries?: false | number;
+    agent?: any;
+    agentOptions?: {
+        [key: string]: any;
+    };
+    headers?: {
+        [key: string]: string;
+    };
 }

@@ -4,8 +4,8 @@ import { ProjectDeletedEvent } from '../../';
 
 @EventsHandler(ProjectDeletedEvent)
 export class ProjectDeletedHandler
-  implements IEventHandler<ProjectDeletedEvent> {
-  handle(event: ProjectDeletedEvent): any {
-    Logger.log(event, 'ProjectDeletedEvent'); // write here
-  }
+    implements IEventHandler<ProjectDeletedEvent> {
+    handle(event: ProjectDeletedEvent): any {
+        Logger.log(event, 'ProjectDeletedEvent'); // write here
+    }
 }

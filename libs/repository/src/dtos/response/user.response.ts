@@ -2,12 +2,12 @@
 import { BaseDto } from '../base.dto';
 
 export class UserResponseDto extends BaseDto {
-  // @IsNotEmpty()
-  firstname: string;
+    // @IsNotEmpty()
+    firstname: string;
 
-  // @IsNotEmpty()
-  lastname: string;
+    // @IsNotEmpty()
+    lastname: string;
 
-  // @IsNotEmpty()
-  email: string;
+    // @IsNotEmpty()
+    email: string;
 }

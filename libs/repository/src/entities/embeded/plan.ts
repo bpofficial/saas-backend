@@ -1,22 +1,22 @@
 export class FeatureEmbed {
-  name: string;
+    name: string;
 
-  normalizedName?: string;
+    normalizedName?: string;
 
-  description?: string;
+    description?: string;
 
-  unit?: string;
+    unit?: string;
 
-  min?: number;
+    min?: number;
 
-  max?: number;
+    max?: number;
 
-  active?: boolean;
+    active?: boolean;
 
-  full?: boolean;
+    full?: boolean;
 }
 
 export enum ActionStatusType {
-  SUCCESS,
-  FAILED,
+    SUCCESS,
+    FAILED,
 }
